@@ -1,0 +1,32 @@
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+}
+
+
+
+.row {
+	width: 80%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+[class*="col-"],
+.bgrid {
+	float: left;
+}

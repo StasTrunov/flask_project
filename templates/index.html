@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+   
+	<title>The most of the most</title>
+	<title>{% block title %} {% endblock %}</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="static/css/base.css">
+   <link rel="stylesheet" href="static/css/vendor.css">  
+   <link rel="stylesheet" href="static/css/main.css">
+  
+
+   <script src="js.2/js/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+   <link rel="stylesheet" href="static/styles/style.2.css">
+   
+        
+
+   <!-- script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+	<script src="/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.ico" type="static/image/x-icon">
+	<link rel="icon" href="favicon.ico" type="static/image/x-icon">
+
+
+
+
+
+</head>
+
+<body id="top">
+
+
+	<!-- header 
+   ================================================== -->
+	
+   	
+<header id="fh5co-header" role="banner">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				
+
+				<input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+      <ul>
+		<li>Будинки
+			<ul>
+				<li><a href="/houses/1">Приватні будинки</a></li>
+				<li><a href="/houses/2">Будинки на дереві</a></li>
+				<li><a href="/houses/3">Будинки на колесах</a></li>
+				<li><a href="/houses/4">Будинки на воді</a></li>
+		  	</ul>
+		</li>
+
+		<li>Будівлі
+			<ul>
+				<li><a href="/buildings/1">Офіси</a></li>
+				<li><a href="/buildings/2">Храми</a></li>
+				<li><a href="/buildings/3">Школи</a></li>
+				<li><a href="/buildings/4">Університети</a></li>
+				<li><a href="/buildings/5">Замки</a></li>
+				<li><a href="/buildings/6">Визначні пам'ятки</a></li>
+		  	</ul>
+		</li>
+		</ul>
+
+		</div>
+
+	<div class="content">
+				<a class="navbar-brand" href="/homepage" style="font-size: 25px; width: 21em">The most of the most</a>		
+
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+   <!-- masonry
+   ================================================== -->
+   <section id="bricks">
+
+	<div class="row masonry">
+
+		<!-- brick-wrapper -->
+	  <div class="bricks-wrapper">
+
+		  <div class="grid-sizer"></div>
+
+		  <div class="brick entry featured-grid animate-this" >
+			  <div class="entry-content">
+				  <div id="featured-post-slider" class="flexslider">
+						<ul class="slides">
+
+							<li >
+								<div class="featured-post-slide">
+
+									<div class="post-background" style="background-image:url('static/images/thumbs/d0441aa70465f53fb6965888c15c8f92.jpg');"></div>
+									<!-- <div><img  width="10"  src="static/images/thumbs/diagonal-building.jpg" lt="building"></div> -->
+									<div class="overlay"></div>			   		
+				   					   
+							
+								</div> 
+							</li> <!-- /slide -->
+						</ul> <!-- end slides -->
+					</div> <!-- end featured-post-slider -->        			
+			  </div> <!-- end entry content -->         		
+		  </div>
+			
+			
+			 
+			 {% for house in houses %}		
+         	<article class="brick entry format-standard animate-this">
+	
+               <div class="overlay" class="entry-thumb">
+                  <a href="#" class="thumb-link">
+	                  <img src="{{ url_for('static', filename='images/renders/' + house['img']) }}">           
+                  </a>
+               </div>
+
+               <div class="entry-text">
+               	<div class="entry-header">
+
+               		<div class="entry-meta">
+               			<span class="cat-links">
+               				<a href="#">{{ house['topic'] }}</a>              				
+               			</span>			
+               		</div>
+
+               		<h1 class="entry-title"><a href="/houses/{{ house['id'] }}" >{{ house['title'] }}.</a></h1>
+               		
+               	</div>
+						<div class="entry-excerpt">
+							{{ house['content']}}
+						</div>
+               </div>
+
+
+			<!--  -->
+			 
+			 
+        		</article> <!-- end article -->
+				{% endfor %}  
+				
+				
+				
+
+			   {% for building in buildings %}
+        		</article> <!-- /article -->
+			
+
+         	<article class="brick entry animate-this">
+
+               <div class="overlay" class="entry-thumb">
+                  <a href="#" class="thumb-link">
+	                  <img src="{{ url_for('static', filename='images/renders/' + building['img']) }}" alt="Shutterbug">                      
+                  </a>
+               </div>
+
+               <div class="entry-text">
+               	<div class="entry-header">
+
+               		<div class="entry-meta">
+               			<span class="cat-links">
+               				<a href="#">{{ building['topic'] }}</a>                 				
+               			</span>			
+               		</div>
+
+               		<h1 class="entry-title"><a href="/buildings/{{ building['id'] }}">{{ building['title'] }}</a></h1>
+               		
+               	</div>
+						<div class="entry-excerpt">
+							{{ building['content']}}
+						</div>
+               </div>
+               
+        		</article> <!-- end article -->
+				{% endfor %}
+
+            
+
+
+
+
+			   
+
+
+
+
+        		</article> <!-- end article -->
+				
+         </div> <!-- end brick-wrapper --> 
+
+   	</div> <!-- end row -->
+
+
+   </section> <!-- end bricks -->
+
+   
+   <footer>
+
+   	<div class="footer-main">
+
+   		<div class="row">  
+
+	      	<div class="col-four tab-full mob-full footer-info">            
+
+	            <h4>Про разробників</h4>
+				<div class="entry-excerpt">
+	               <p >
+		          	Lorem ipsum Ut velit dolor Ut labore id fugiat in ut fugiat nostrud qui in dolore commodo eu magna Duis cillum dolor officia esse mollit proident Excepteur exercitation nulla. Lorem ipsum In reprehenderit commodo aliqua irure labore.
+		          	</p>
+				</div>
+		      </div> <!-- end footer-info -->
+			  <br>
+	      	<div class="col-four tab-full mob-full footer-info">            
+
+	            <h4>Про мій сайт</h4>
+				<div class="entry-excerpt">
+	               <p >
+		          	Lorem ipsum Ut velit dolor Ut labore id fugiat in ut fugiat nostrud qui in dolore commodo eu magna Duis cillum dolor officia esse mollit proident Excepteur exercitation nulla. Lorem ipsum In reprehenderit commodo aliqua irure labore.
+		          	</p>
+				</div>
+		      </div> <!-- end footer-info --> 
+			  <br>
+	      	<div class="col-two tab-1-3 mob-1-2 social-links">
+
+	      		<h4></h4>
+
+	      		<ul>
+	      			<li><a href="#">Twitter</a></li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Dribbble</a></li>
+						<li><a href="#">Google+</a></li>
+						<li><a href="#">Instagram</a></li>
+					</ul>
+					
+	      	</div> <!-- end social links --> 
+			
+	      	<div class="col-four tab-1-3 mob-full footer-subscribe">
+
+	      		<h4>Subscribe</h4>
+
+	      		<p>Keep yourself updated. Subscribe to our newsletter.</p>
+
+	      		<div class="subscribe-form">
+	      	
+	      			<form id="mc-form" class="group" novalidate="true">
+
+							<input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Type &amp; press enter" required=""> 
+	   		
+			   			<input type="submit" name="subscribe" >
+		   	
+		   				<label for="mc-email" class="subscribe-message"></label>
+			
+						</form>
+
+	      		</div>	      		
+	      	           	
+	      	</div> <!-- end subscribe -->         
+
+	      </div> <!-- end row -->
+
+   	</div> <!-- end footer-main -->
+
+      <div class="footer-bottom">
+      	<div class="row">
+
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>The most of the most 2023</span> 	         	
+		         </div>
+
+		         <div id="go-top">
+		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon icon-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+
+      	</div> 
+      </div> <!-- end footer-bottom -->  
+
+   </footer>  
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="/js/jquery-2.1.3.min.js"></script>
+   <script src="/js/plugins.js"></script>
+   <script src="/js/jquery.appear.js"></script>
+   <script src="/js/main.js"></script>
+
+   	<!-- jQuery -->
+	<script src="/js.2/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/js.2/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/js.2/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/js.2/jquery.waypoints.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/js.2/jquery.magnific-popup.min.js"></script>
+	<!-- Salvattore -->
+	<script src="/js.2/salvattore.min.js"></script>
+	<!-- Main JS -->
+	<script src="/js.2/main.js"></script>
+
+</body>
+
+</html>

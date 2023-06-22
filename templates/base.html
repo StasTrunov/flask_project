@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <link rel="stylesheet" href="/static/css/base.2.css">
+    <!-- <link rel="stylesheet" href="/static/css/vendor.css">  -->
+    <!-- <link rel="stylesheet" href="/static/css/main.css"> -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/styles/style.2.css">
+
+
+    
+
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body id="top">
+
+
+	<!-- header 
+   ================================================== -->
+    <div id="fh5co-offcanvass">
+        <header id="fh5co-header" role="banner">
+	
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+        
+                        
+        
+                        <input type="checkbox" id="active">
+                        <label for="active" class="menu-btn"><span></span></label>
+                        <label for="active" class="close"></label>
+                        <div class="wrapper">
+                          <ul>
+                            <li>Будинки
+                                <ul>
+                                    <li><a href="/houses/1">Приватні будинки</a></li>
+                                    <li><a href="/houses/2">Будинки на дереві</a></li>
+                                    <li><a href="/houses/3">Будинки на колесах</a></li>
+                                    <li><a href="/houses/4">Будинки на воді</a></li>
+                                  </ul>
+                            </li>
+                    
+                            <li>Будівлі
+                                <ul>
+                                    <li><a href="/buildings/1">Офіси</a></li>
+                                    <li><a href="/buildings/2">Храми</a></li>
+                                    <li><a href="/buildings/3">Школи</a></li>
+                                    <li><a href="/buildings/4">Університети</a></li>
+                                    <li><a href="/buildings/5">Замки</a></li>
+                                    <li><a href="/buildings/6">Визначні пам'ятки</a></li>
+                                  </ul>
+                            </li>
+                            </ul>
+                    
+                            </div>
+                
+            <div class="content">
+                        <a class="navbar-brand" href="/homepage" style="font-size: 25px; width: 21em">The most of the most</a>		
+        
+                    </div>
+                </div>
+            </div>
+        </header>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
